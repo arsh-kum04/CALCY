@@ -1,17 +1,29 @@
-package com.example.calcy
+Sure, here is the requested documentation. 
 
-import org.junit.Test
+**Folder Name:** com.example.calcy
 
-import org.junit.Assert.*
+**File Name:** ExampleUnitTest.java
+
+```java
+// Package declaration
+package com.example.calcy;
+
+// Import necessary libraries
+import org.junit.Test;
+import org.junit.Assert.*;
 
 /**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
+ * This class contains unit tests for the Calculator application.
  */
-class ExampleUnitTest {
+public class ExampleUnitTest {
+
+    /**
+     * This test checks if the addition of two numbers is correct.
+     */
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    public void addition_isCorrect() {
+        // Assert that the sum of 2 and 2 is equal to 4.
+        assertEquals(4, 2 + 2);
     }
 }
+```
