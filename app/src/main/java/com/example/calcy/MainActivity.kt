@@ -1,3 +1,11 @@
+**Folder Name: com.example.calcy**
+
+**File Name: MainActivity.kt**
+
+```kotlin
+// Folder Name: com.example.calcy
+// File Name: MainActivity.kt
+
 package com.example.calcy
 
 import androidx.appcompat.app.AppCompatActivity
@@ -8,100 +16,138 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    private var tvInput:TextView?=null
-    private var lastdigit :Boolean=false
-    private var lastdot :Boolean=false
-    private var count =0
+    private var tvInput: TextView? = null
+    private var lastdigit: Boolean = false
+    private var lastdot: Boolean = false
+    private var count = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tvInput=findViewById(R.id.tvInput)
+        tvInput = findViewById(R.id.tvInput)
     }
-    fun onDigit(view:View)
-    {
-        tvInput?.append((view as Button).text)
-        lastdigit=true
-        lastdot=false
-    }
-    fun onClear(view: View)
-    {
-        tvInput?.text=""
-    }
-    fun onDot(view: View)
-    {
-        if(lastdigit && !lastdot && count<1){
-            tvInput?.append(".")
-            lastdigit=false
-            lastdot =true
-            count=1
-        }
-    }
-    fun onOperator(view: View)
-    {
-    tvInput?.text?.let { if(lastdigit && !isOperatorAdded(it.toString())){
-        tvInput?.append((view as Button).text)
-    }
-    }
-    }
-    fun isOperatorAdded(value: String):Boolean
-    {
-        return if(value.startsWith("-")){false}
-        else
-        {
-            value.contains("/")
-                    ||value.contains("+")
-                    ||value.contains("*")
-                    ||value.contains("-")
-        }
-    }
-    fun onEqual(view: View)
-    {
-        if(lastdigit)
-        {   var tvValue=tvInput?.text.toString()
-            var prefix=""
-            try {   if(tvValue.startsWith("-"))
-            {
-                prefix="-"
-                tvValue=tvValue.substring(1)
-            }
 
-                  if (tvValue.contains("-"))
-                  {
-                      val tvsplitvalue=tvValue.split("-")
-                      var one=tvsplitvalue[0]
-                      var two=tvsplitvalue[1]
-                      if(prefix.isNotEmpty()){one= prefix+one}
-                      tvInput?.text=(one.toDouble()-two.toDouble()).toString()
-                  }
-                else if (tvValue.contains("+"))
-                  {
-                      val tvsplitvalue=tvValue.split("+")
-                      var one=tvsplitvalue[0]
-                      var two=tvsplitvalue[1]
-                      if(prefix.isNotEmpty()){one= prefix+one}
-                      tvInput?.text=(one.toDouble()+two.toDouble()).toString()
-                  }
-                else if (tvValue.contains("/"))
-                  {
-                      val tvsplitvalue=tvValue.split("/")
-                      var one=tvsplitvalue[0]
-                      var two=tvsplitvalue[1]
-                      if(prefix.isNotEmpty()){one= prefix+one}
-                      tvInput?.text=(one.toDouble()/two.toDouble()).toString()
-                  }
-                else if (tvValue.contains("*"))
-                  {
-                      val tvsplitvalue=tvValue.split("*")
-                      var one=tvsplitvalue[0]
-                      var two=tvsplitvalue[1]
-                      if(prefix.isNotEmpty()){one= prefix+one}
-                      tvInput?.text=(one.toDouble()*two.toDouble()).toString()
-                  }
+    fun onDigit(view: View) {
+        // Appends the text of the button to the text view
+        tvInput?.append((view as Button).text)
+        // Sets the last digit flag to true
+        lastdigit = true
+        // Sets the last dot flag to false
+        lastdot = false
+    }
+
+    fun onClear(view: View) {
+        // Clears the text view
+        tvInput?.text = ""
+    }
+
+    fun onDot(view: View) {
+        // Checks if the last input was a digit, the last input was not a dot, and the number of dots is less than 1
+        if (lastdigit && !lastdot && count < 1) {
+            // Appends a dot to the text view
+            tvInput?.append(".")
+            // Sets the last digit flag to false
+            lastdigit = false
+            // Sets the last dot flag to true
+            lastdot = true
+            // Increments the number of dots
+            count++
+        }
+    }
+
+    fun onOperator(view: View) {
+        // Gets the text of the text view
+        tvInput?.text?.let {
+            // Checks if the last input was a digit and there is no operator added yet
+            if (lastdigit && !isOperatorAdded(it.toString())) {
+                // Appends the text of the button to the text view
+                tvInput?.append((view as Button).text)
             }
-            catch (e:java.lang.ArithmeticException)
-            {
+        }
+    }
+
+    fun isOperatorAdded(value: String): Boolean {
+        // Returns true if the value starts with a minus sign or contains any of the following operators: /, +, *, -
+        return if (value.startsWith("-")) {
+            false
+        } else {
+            value.contains("/") || value.contains("+") || value.contains("*") || value.contains("-")
+        }
+    }
+
+    fun onEqual(view: View) {
+        // Checks if the last input was a digit
+        if (lastdigit) {
+            // Gets the text of the text view
+            var tvValue = tvInput?.text.toString()
+            // Initializes a prefix variable to store the sign of the number (if any)
+            var prefix = ""
+            try {
+                // Checks if the number starts with a minus sign
+                if (tvValue.startsWith("-")) {
+                    // Sets the prefix to minus (-) and removes the minus sign from the number
+                    prefix = "-"
+                    tvValue = tvValue.substring(1)
+                }
+                // Checks if the number contains a minus sign
+                if (tvValue.contains("-")) {
+                    // Splits the number into two parts at the minus sign
+                    val tvSplitValue = tvValue.split("-")
+                    // Gets the first part of the number (before the minus sign)
+                    var one = tvSplitValue[0]
+                    // Gets the second part of the number (after the minus sign)
+                    var two = tvSplitValue[1]
+                    // Adds the prefix to the first part of the number (if necessary)
+                    if (prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+                    // Sets the text of the text view to the result of subtracting the second part from the first part
+                    tvInput?.text = (one.toDouble() - two.toDouble()).toString()
+                } else if (tvValue.contains("+")) {
+                    // Splits the number into two parts at the plus sign
+                    val tvSplitValue = tvValue.split("+")
+                    // Gets the first part of the number (before the plus sign)
+                    var one = tvSplitValue[0]
+                    // Gets the second part of the number (after the plus sign)
+                    var two = tvSplitValue[1]
+                    // Adds the prefix to the first part of the number (if necessary)
+                    if (prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+                    // Sets the text of the text view to the result of adding the second part to the first part
+                    tvInput?.text = (one.toDouble() + two.toDouble()).toString()
+                } else if (tvValue.contains("/")) {
+                    // Splits the number into two parts at the division sign
+                    val tvSplitValue = tvValue.split("/")
+                    // Gets the first part of the number (before the division sign)
+                    var one = tvSplitValue[0]
+                    // Gets the second part of the number (after the division sign)
+                    var two = tvSplitValue[1]
+                    // Adds the prefix to the first part of the number (if necessary)
+                    if (prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+                    // Sets the text of the text view to the result of dividing the first part by the second part
+                    tvInput?.text = (one.toDouble() / two.toDouble()).toString()
+                } else if (tvValue.contains("*")) {
+                    // Splits the number into two parts at the multiplication sign
+                    val tvSplitValue = tvValue.split("*")
+                    // Gets the first part of the number (before the multiplication sign)
+                    var one = tvSplitValue[0]
+                    // Gets the second part of the number (after the multiplication sign)
+                    var two = tvSplitValue[1]
+                    // Adds the prefix to the first part of the number (if necessary)
+                    if (prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+                    // Sets the text of the text view to the result of multiplying the first part by the second part
+                    tvInput?.text = (one.toDouble() * two.toDouble()).toString()
+                }
+            } catch (e: java.lang.ArithmeticException) {
+                // Catches any arithmetic exceptions (e.g., division by zero) and prints the stack trace
                 e.printStackTrace()
             }
         }
     }
 }
+```
