@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         tvInput = findViewById(R.id.tvInput)
+        // Find the view for the text view by its id R.id.tvInput and initialize tvInput
     }
 
     fun onDigit(view: View) {
@@ -35,11 +36,13 @@ class MainActivity : AppCompatActivity() {
         // Sets the last dot flag to false
         lastdot = false
     }
+    // Function to handle digit buttons (0-9)
 
     fun onClear(view: View) {
         // Clears the text view
         tvInput?.text = ""
     }
+    // Function to handle clear button
 
     fun onDot(view: View) {
         // Checks if the last input was a digit, the last input was not a dot, and the number of dots is less than 1
@@ -54,6 +57,7 @@ class MainActivity : AppCompatActivity() {
             count++
         }
     }
+    // Function to handle dot button
 
     fun onOperator(view: View) {
         // Gets the text of the text view
@@ -65,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    // Function to handle operator buttons (+, -, *, /)
 
     fun isOperatorAdded(value: String): Boolean {
         // Returns true if the value starts with a minus sign or contains any of the following operators: /, +, *, -
@@ -74,6 +79,7 @@ class MainActivity : AppCompatActivity() {
             value.contains("/") || value.contains("+") || value.contains("*") || value.contains("-")
         }
     }
+    // Function to check if an operator is already added
 
     fun onEqual(view: View) {
         // Checks if the last input was a digit
@@ -149,5 +155,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+   // Function to handle equal button
 }
 ```
