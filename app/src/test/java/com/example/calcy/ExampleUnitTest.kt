@@ -1,8 +1,7 @@
 **Folder Name:** com.example.calcy
 
 **File Name:** MainActivity.java
-
-```java
+```
 // Package declaration
 package com.example.calcy;
 
