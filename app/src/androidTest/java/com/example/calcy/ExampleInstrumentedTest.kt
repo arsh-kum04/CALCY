@@ -1,4 +1,5 @@
 **Folder Name:** test
+
 **File Name:** ExampleInstrumentedTest.java
 
 **Line by Line Documented Code:**
@@ -22,7 +23,7 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
         // Assertion to verify the package name of the app under test.
-        assertEquals("com.example.calcy", appContext.getPackageName());
+        Assert.assertEquals("com.example.calcy", appContext.getPackageName());
     }
 }
 ```
