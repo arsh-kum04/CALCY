@@ -1,6 +1,7 @@
-**Folder Name**: com.example.calcy
+// File Name: MainActivity.java
+// Folder Name: com.example.calcy
 
-**File Name**: MainActivity.java
+**Line by line documented Code**:
 
 ```java
 // Package declaration
