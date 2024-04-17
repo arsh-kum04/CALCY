@@ -185,3 +185,47 @@ class MainActivity : AppCompatActivity() {
    // Function to handle equal button
 }
 ```
+
+**Additional Examples:**
+
+**Folder Name: com.example.notes**
+
+**File Name: Note.java**
+
+```java
+// Folder Name: com.example.notes
+// File Name: Note.java
+
+package com.example.notes;
+
+import java.util.Date;
+
+public class Note {
+
+    private int id; // Unique ID for the note
+    private String title; // Title of the note
+    private String content; // Content of the note
+    private Date dateCreated; // Date when the note was created
+
+    // Constructors, getters, setters, and other methods
+}
+```
+
+**Folder Name: com.example.musicplayer**
+
+**File Name: Song.kt**
+
+```kotlin
+// Folder Name: com.example.musicplayer
+// File Name: Song.kt
+
+package com.example.musicplayer
+
+data class Song(
+    val id: Int, // Unique ID for the song
+    val title: String, // Title of the song
+    val artist: String, // Artist of the song
+    val album: String, // Album of the song
+    val duration: Int // Duration of the song in milliseconds
+)
+```
