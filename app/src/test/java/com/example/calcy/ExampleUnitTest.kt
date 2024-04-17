@@ -1,8 +1,9 @@
-**Folder Name**: com.example.calcy
+**Folder Name:** com.example.calcy
 
-**File Name**: MainActivity.java
+**File Name:** MainActivity.java
 
 **Line by line documented Code**:
+
 ```java
 // Package declaration
 // This line specifies the package to which the MainActivity class belongs.
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Get the numbers from the edit texts and convert them to integers
                 // These lines retrieve the numbers entered by the user in the edit texts and convert them to integers.
                 int num1 = Integer.parseInt(num1EditText.getText().toString());
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         subButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Get the numbers from the edit texts and convert them to integers
                 // These lines retrieve the numbers entered by the user in the edit texts and convert them to integers.
                 int num1 = Integer.parseInt(num1EditText.getText().toString());
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         mulButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Get the numbers from the edit texts and convert them to integers
                 // These lines retrieve the numbers entered by the user in the edit texts and convert them to integers.
                 int num1 = Integer.parseInt(num1EditText.getText().toString());
@@ -105,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
         divButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Get the numbers from the edit texts and convert them to integers
                 // These lines retrieve the numbers entered by the user in the edit texts and convert them to integers.
                 int num1 = Integer.parseInt(num1EditText.getText().toString());
@@ -115,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 if (num2 == 0) {
                     resultTextView.setText("Error: Division by zero");
                 } else {
+
                     // Divide the first number by the second and display the result
                     // This line divides the first number by the second and displays the result in the result text view.
                     int result = num1 / num2;
