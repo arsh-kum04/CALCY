@@ -1,8 +1,8 @@
-// File Name: MainActivity.java
-// Folder Name: com.example.calcy
+**Folder Name**: com.example.calcy
+
+**File Name**: MainActivity.java
 
 **Line by line documented Code**:
-
 ```java
 // Package declaration
 // This line specifies the package to which the MainActivity class belongs.
