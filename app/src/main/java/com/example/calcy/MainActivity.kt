@@ -186,8 +186,6 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-**Additional Examples:**
-
 **Folder Name: com.example.notes**
 
 **File Name: Note.java**
@@ -229,3 +227,9 @@ data class Song(
     val duration: Int // Duration of the song in milliseconds
 )
 ```
+
+**Additional Notes:**
+
+* The provided codebase does not include the UI layout files (e.g., activity_main.xml). To provide complete documentation, you could also analyze and document the UI layout files, describing the views, their attributes, and their interactions with the code files.
+* You could enhance the documentation by including additional information, such as the purpose of the codebase, its overall architecture, and any dependencies or external libraries being used.
+* Markdown can be used to format the documentation for improved readability and organization.
