@@ -18,10 +18,10 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
 
     // Variables to keep track of the state of the calculator
-    private var tvInput: TextView? = null
-    private var lastdigit: Boolean = false
-    private var lastdot: Boolean = false
-    private var count = 0
+    private var tvInput: TextView? = null // Variable to keep track of the input text view
+    private var lastdigit: Boolean = false // Flag to indicate if the last input was a digit
+    private var lastdot: Boolean = false // Flag to indicate if the last input was a dot
+    private var count = 0 // Variable to keep track of the number of dots
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     // Function to handle digit buttons (0-9)
 
     fun onClear(view: View) {
-        // Clears the text view
+       // Clears the text view
         tvInput?.text = ""
     }
     // Function to handle clear button
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     fun onDot(view: View) {
         // Checks if the last input was a digit, the last input was not a dot, and the number of dots is less than 1
         if (lastdigit && !lastdot && count < 1) {
-            // Appends a dot to the text view
+           // Appends a dot to the text view
             tvInput?.append(".")
 
             // Sets the last digit flag to false
