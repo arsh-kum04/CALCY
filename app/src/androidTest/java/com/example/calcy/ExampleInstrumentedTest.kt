@@ -1,7 +1,7 @@
 **Folder Name:** test
 **File Name:** ExampleInstrumentedTest.java
 
-**// Import required libraries for testing.**
+// Import required libraries for testing.
 // This line imports the necessary libraries for writing Android instrumented tests.
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
