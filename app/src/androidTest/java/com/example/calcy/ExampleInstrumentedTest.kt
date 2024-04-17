@@ -1,4 +1,5 @@
 **Folder Name:** test
+
 **File Name:** ExampleInstrumentedTest.java
 
 ```java
@@ -19,6 +20,7 @@ import org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
+    // Test method to verify the application context.
     @Test
     public void useAppContext() {
         // Get the context of the app under test.
