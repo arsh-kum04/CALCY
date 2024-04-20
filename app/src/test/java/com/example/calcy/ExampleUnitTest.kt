@@ -2,8 +2,7 @@
 
 **File Name:** MainActivity.java
 
-**Line by line documented Code**:
-
+**Documented Code:**
 ```java
 // Package declaration
 // This line specifies the package to which the MainActivity class belongs.
