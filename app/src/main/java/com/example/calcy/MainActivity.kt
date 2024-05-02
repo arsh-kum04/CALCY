@@ -204,6 +204,7 @@ public class Note {
     private String title; // Title of the note
     private String content; // Content of the note
     private Date dateCreated; // Date when the note was created
+    private Boolean isArchived; // Flag to indicate if the note is archived
 
     // Constructors, getters, setters, and other methods
 }
@@ -224,6 +225,7 @@ data class Song(
     val title: String, // Title of the song
     val artist: String, // Artist of the song
     val album: String, // Album of the song
-    val duration: Int // Duration of the song in milliseconds
+    val duration: Int, // Duration of the song in milliseconds
+    val filePath: String // File path of the song
 )
 ```
