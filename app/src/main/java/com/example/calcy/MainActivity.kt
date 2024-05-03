@@ -1,5 +1,3 @@
-**Folder Name: com.example.calcy**
-
 **File Name: MainActivity.kt**
 
 ```kotlin
@@ -186,8 +184,6 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-**Folder Name: com.example.notes**
-
 **File Name: Note.java**
 
 ```java
@@ -209,8 +205,6 @@ public class Note {
     // Constructors, getters, setters, and other methods
 }
 ```
-
-**Folder Name: com.example.musicplayer**
 
 **File Name: Song.kt**
 
