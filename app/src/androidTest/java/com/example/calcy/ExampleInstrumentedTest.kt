@@ -2,7 +2,6 @@
 
 **File Name:** MainActivity.java
 
-```java
 // This is the main activity of the application. It handles the user interface and the basic functionality of the calculator.
 public class MainActivity extends AppCompatActivity {
 
@@ -93,4 +92,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-```
