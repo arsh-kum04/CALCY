@@ -202,7 +202,16 @@ public class Note {
     private Date dateCreated; // Date when the note was created
     private Boolean isArchived; // Flag to indicate if the note is archived
 
-    // Constructors, getters, setters, and other methods
+    // Getters and setters for id, title, content, dateCreated, and isArchived
+
+    // Constructor
+    public Note(int id, String title, String content, Date dateCreated, Boolean isArchived) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.dateCreated = dateCreated;
+        this.isArchived = isArchived;
+    }
 }
 ```
 
@@ -221,5 +230,7 @@ data class Song(
     val album: String, // Album of the song
     val duration: Int, // Duration of the song in milliseconds
     val filePath: String // File path of the song
-)
+) {
+    // Getters for id, title, artist, album, duration, and filePath
+}
 ```
